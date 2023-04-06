@@ -12,6 +12,10 @@ public class ReservationHotel extends Reservation{
 		this.nbLitDouble = nbLitDouble;
 		this.numChambre = numChambre;
 	}
+	
+	public String toString() {
+		return "Le"+jour+"/"+mois+": chambre n°"+numChambre+" avec "+nbLitSimple+" lits simples et "+nbLitDouble+" lits doubles";
+	}
 
 
 
