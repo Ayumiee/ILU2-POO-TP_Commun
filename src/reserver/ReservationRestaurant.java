@@ -12,9 +12,9 @@ public class ReservationRestaurant extends Reservation{
 	
 	public String toString() {
 		if (numS==1) {
-			return "Le "+jour+"/"+mois+" : table n°"+numTable+" pour le premier service.\n";
+			return "Le "+jour+"/"+mois+" : table nï¿½"+numTable+" pour le premier service.\n";
 		}
-		return "Le "+jour+"/"+mois+" : table n°"+numTable+" pour le deuxième service.\n";
+		return "Le "+jour+"/"+mois+" : table nï¿½"+numTable+" pour le deuxiï¿½me service.\n";
 	}
 	
 }

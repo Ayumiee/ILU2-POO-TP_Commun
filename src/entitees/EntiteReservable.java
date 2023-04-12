@@ -3,22 +3,22 @@ package entitees;
 import formulaire.Formulaire;
 import formulaire.FormulaireHotel;
 import reserver.CalendrierAnnuel;
+import reserver.Reservation;
 
 public abstract class EntiteReservable <F extends Formulaire>{
-	protected CalendrierAnnuel calendrier;
-	protected String entite;
+	protected static CalendrierAnnuel calendrier;
+	protected int numero;
 	
-	public EntiteReservable(CalendrierAnnuel calendrier,String entite) {
+	public EntiteReservable(CalendrierAnnuel calendrier) {
 		this.calendrier = calendrier;
-		this.entite=entite;
 		}
 	
-	public String getEntite() {
-		return entite;
+	public int getNumero() {
+		return numero;
 	}
 	
-	public void setEntite(String entite) {
-		this.entite = entite;
+	public void setNumero(int numero) {
+		this.numero = numero;
 	}
 	
 	public boolean estLibre(F formulaire) {
@@ -30,21 +30,6 @@ public abstract class EntiteReservable <F extends Formulaire>{
 			return false;
 		}
 	}
-//	A FAIRE DANS TABLE, HOTEL RESTO 
-	public abstract void compatible(F formulaire);
-//		if ()
-//			//si c une table : creer formulaire table
-//	}
-//	
-	public abstract F reserver();
-//		if (compatible()) {
-//			if ({
-//				
-//			}
-//			
-//			return reservation;
-//		}else {
-//			return null;
-//		}
-//	}
+
+
 }
