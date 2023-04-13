@@ -2,6 +2,7 @@ package entitees;
 
 import formulaire.Formulaire;
 import formulaire.FormulaireHotel;
+import formulaire.FormulaireRestaurant;
 import formulaire.FormulaireSpectacle;
 import reserver.Reservation;
 import reserver.ReservationHotel;
@@ -13,8 +14,9 @@ public class PlaceSpectacle extends EntiteReservable {
 		super(calendrier);
 	}
 
-	public boolean compatible(FormulaireSpectacle formulaire) {
-		if((estLibre(formulaire))&&(getNumero()==formulaire.getNumChaise())){
+	public boolean compatible(Formulaire formulaire) {
+		FormulaireSpectacle formulaireSpectacle= (FormulaireSpectacle) formulaire;
+		if((estLibre(formulaireSpectacle))&&(getNumero()==formulaireSpectacle.getNumChaise())){
 			return true;
 		}else {
 			return false;
@@ -22,7 +24,7 @@ public class PlaceSpectacle extends EntiteReservable {
 	}
 
 
-	public Reservation reserver(FormulaireSpectacle formulaire) {
+	public Reservation reserver(Formulaire formulaire) {
 		if (compatible(formulaire)) {
 			int jour = formulaire.getJour();
 			int mois = formulaire.getMois();

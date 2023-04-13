@@ -5,7 +5,9 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import entitees.Restaurant;
 import formulaire.FormulaireRestaurant;
+import reserver.ReservationRestaurant;
 
 class RestaurantTest {
 	FormulaireRestaurant formulaire;

@@ -18,8 +18,9 @@ public class Chambre extends EntiteReservable{
 		this.nbLitDouble = nbLitDouble;
 	}
 
-	public boolean compatible(FormulaireHotel formulaire) {
-		if((estLibre(formulaire))&&(nbLitDouble>=formulaire.getNbLitDouble())&&(nbLitSimple>=formulaire.getNbLitSimple())) {
+	public boolean compatible(Formulaire formulaire) {
+		FormulaireHotel formulaireHotel= (FormulaireHotel) formulaire;
+		if((estLibre(formulaireHotel))&&(nbLitDouble>=formulaireHotel.getNbLitDouble())&&(nbLitSimple>=formulaireHotel.getNbLitSimple())) {
 			return true;
 		}else {
 			return false;
@@ -27,7 +28,7 @@ public class Chambre extends EntiteReservable{
 	}
 
 
-	public Reservation reserver(FormulaireHotel formulaire) {
+	public Reservation reserver(Formulaire formulaire) {
 		if (compatible(formulaire)) {
 			int jour = formulaire.getJour();
 			int mois = formulaire.getMois();

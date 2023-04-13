@@ -27,6 +27,10 @@ public class FormulaireRestaurant extends Formulaire {
 		this.numEntite=numEntite;
 	}
 
+	public int getNbService() {
+		return nbService;
+	}
+
 	
 	
 	

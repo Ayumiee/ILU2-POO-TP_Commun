@@ -2,15 +2,16 @@ package entitees;
 
 import formulaire.Formulaire;
 import formulaire.FormulaireHotel;
+import formulaire.FormulaireRestaurant;
 import reserver.CalendrierAnnuel;
 import reserver.Reservation;
 
-public abstract class EntiteReservable <F extends Formulaire>{
+public abstract class EntiteReservable{
 	protected static CalendrierAnnuel calendrier;
-	protected int numero;
+	protected int numero=0;
 	
 	public EntiteReservable(CalendrierAnnuel calendrier) {
-		this.calendrier = calendrier;
+		this.calendrier = new CalendrierAnnuel();
 		}
 	
 	public int getNumero() {
@@ -21,7 +22,7 @@ public abstract class EntiteReservable <F extends Formulaire>{
 		this.numero = numero;
 	}
 	
-	public boolean estLibre(F formulaire) {
+	public boolean estLibre(Formulaire formulaire) {
 		int jour=formulaire.getJour();
 		int mois=formulaire.getMois();
 		if (calendrier.estLibre(jour, mois)) {
@@ -30,6 +31,12 @@ public abstract class EntiteReservable <F extends Formulaire>{
 			return false;
 		}
 	}
+	
+	
+
+	public abstract Reservation reserver(Formulaire formulaire);
+
+	public abstract boolean compatible(Formulaire formulaire);
 
 
 }
